@@ -1,0 +1,9 @@
+{
+  "name": "bnsh",
+  "version": "0.1.0",
+  "description": "Benchmarking library and cli",
+  "main": "index.js",
+  "repository": "https://github.com/mikbry/bnsh.git",
+  "author": "Mik <mik@mikbry.com>",
+  "license": "MIT"
+}
