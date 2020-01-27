@@ -41,8 +41,8 @@ class BnshCli {
 
   header() {
     // const { version } = getPackage('bnsh');
-    const version = 'WIP';
-    this.log(chalk.bold(emoji.emojify(`Bnsh cleans package before publishing v${version}`)));
+    const version = '0.1 [WIP]';
+    this.log(chalk.bold(emoji.emojify(`Bnsh benchmark your code v${version}`)));
   }
 
   usage() {
@@ -71,7 +71,7 @@ class BnshCli {
       const bnsh = new Bnsh(args.dist, args.n, args._);
       // const pkg = getPackage();
       // await bnsh.transform(pkg);
-      await bnsh.write();
+      await bnsh.start();
       // this.log('args=', args);
     }
   }

@@ -17,14 +17,16 @@
 > Bnsh is an amazing tool to create and display powerful benchmarks from your es2015+ or typescript codes.
 
 ### WIP
+Tasks to do:
 - [x] init project
-- [ ] codebase
+- [x] codebase
 - [ ] suite and benchmark functions
 - [ ] cli
 - [ ] tests and coverage
 - [ ] reporters : cli
 - [ ] examples
 - [ ] documentation
+- [ ] configure Github (PR, issues,  rights,...)
 - [ ] replace benchmark.js
 - [ ] browser support
 - [ ] website
