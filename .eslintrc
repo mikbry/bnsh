@@ -7,6 +7,10 @@
   "parserOptions": {
     "ecmaVersion": 11
   },
+  "globals": {
+    "benchmark": "readonly",
+    "suite": "readonly"
+  },
   "env": {
     "browser": true,
     "es2020": true,
