@@ -23,6 +23,7 @@
     "node": ">=10"
   },
   "dependencies": {
+    "benchmark": "^2.1.4",
     "chalk": "^3.0.0",
     "minimist": "^1.2.0",
     "node-emoji": "^1.10.0"
@@ -45,10 +46,10 @@
     "mocha": "^6.2.2",
     "nodemon": "^2.0.1",
     "nyc": "^14.1.1",
+    "packito": "0.4.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "rollup": "^1.27.9",
-    "packito": "0.4.0"
+    "rollup": "^1.27.9"
   },
   "husky": {
     "hooks": {
@@ -62,4 +63,3 @@
     }
   }
 }
-
