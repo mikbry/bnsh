@@ -25,6 +25,7 @@ export default class extends Abstract {
 
   // eslint-disable-next-line class-methods-use-this
   runSuite(suite) {
+    // TODO use a reporter
     suite.provider
       .on('cycle', event => {
         console.log(String(event.target));

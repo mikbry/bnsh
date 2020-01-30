@@ -11,10 +11,11 @@ import providersFactory from './providers';
 const fsp = fs.promises;
 
 export default class Bnsh {
-  constructor() {
+  constructor(opts) {
     // TODO remove this hard coding;
     this.opts = {
       provider: 'benchmarkjs',
+      ...opts,
     };
     this.provider = providersFactory(this.opts.provider);
   }
@@ -38,7 +39,7 @@ export default class Bnsh {
       console.log(`add benchmark "${name}"`);
       this.provider.addBenchmark(name, func, opts);
     };
-    await this.importFiles('./benchmark');
+    await this.importFiles(this.opts.path);
     // TODO
     await this.provider.run();
   }

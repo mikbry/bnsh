@@ -17,15 +17,16 @@ class BnshCli {
     this.exit = exit;
     this.chalk = chalk;
     this.options = {
-      string: ['src'],
+      string: ['path', 'grep'],
       boolean: ['help'],
       stopEarly: true,
       alias: {
-        s: 'src',
+        p: 'path',
         h: 'help',
+        g: 'grep',
       },
       default: {
-        src: './benchmark',
+        path: './benchmark',
         help: false,
       },
     };
@@ -63,16 +64,18 @@ class BnshCli {
     this.hrstart = process.hrtime();
     this.header();
     const args = minimist(this.args, this.options);
+    const path = args._[0];
+    if (path && path.length > 0) {
+      args.path = path;
+      args.p = path;
+    }
     if (args.help) {
       // Display help
       this.help();
     } else {
       // WIP execute
-      const bnsh = new Bnsh(args.dist, args.n, args._);
-      // const pkg = getPackage();
-      // await bnsh.transform(pkg);
+      const bnsh = new Bnsh({ path: args.path });
       await bnsh.start();
-      // this.log('args=', args);
     }
   }
 }

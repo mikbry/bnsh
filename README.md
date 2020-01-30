@@ -20,14 +20,14 @@
 Tasks to do:
 - [x] init project
 - [x] codebase
-- [ ] suite and benchmark functions
-- [ ] cli
+- [x] suite and benchmark functions
+- [x] cli
 - [ ] tests and coverage
-- [ ] reporters : cli
+- [ ] reporters : console
 - [ ] examples
 - [ ] documentation
 - [ ] configure Github (PR, issues,  rights,...)
-- [ ] replace benchmark.js
+- [ ] replace benchmark.js provider
 - [ ] browser support
 - [ ] website
 - [ ] reporters : json, csv, html
