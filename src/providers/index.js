@@ -7,7 +7,7 @@
  */
 import Benchmarkjs from './benchmarkjs';
 
-// TODO load different engines
-const builder = (name, opts) => new Benchmarkjs(opts);
+// TODO load different providers using name
+const factory = (name, opts) => new Benchmarkjs(name, opts);
 
-export default builder;
+export default factory;

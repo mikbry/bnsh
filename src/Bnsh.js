@@ -6,27 +6,40 @@
  * LICENSE file in the root directory of this source tree.
  */
 import fs from 'fs';
+import providersFactory from './providers';
+
+const fsp = fs.promises;
 
 export default class Bnsh {
+  constructor() {
+    // TODO remove this hard coding;
+    this.opts = {
+      provider: 'benchmarkjs',
+    };
+    this.provider = providersFactory(this.opts.provider);
+  }
+
   // eslint-disable-next-line class-methods-use-this
   async importFiles(sourceDir) {
-    fs.readdir(sourceDir, (_err, files) => {
-      files.forEach(async file => {
-        const module = await import(`.${sourceDir}/${file}`);
-        console.log('import ', file, module);
-      });
+    const files = await fsp.readdir(sourceDir);
+    files.forEach(async file => {
+      console.log('import ', file);
+      await import(`.${sourceDir}/${file}`);
     });
   }
 
-  start() {
-    global.suite = (suiteName, func) => {
-      console.log('add suite ', suiteName);
-      func();
+  async start() {
+    global.suite = (name, func, opts) => {
+      console.log(`add suite "${name}"`);
+      const suite = this.provider.addSuite(name, func, opts);
+      suite.func();
     };
-    global.benchmark = benchmarkName => {
-      console.log('add benchmark', benchmarkName);
+    global.benchmark = (name, func, opts) => {
+      console.log(`add benchmark "${name}"`);
+      this.provider.addBenchmark(name, func, opts);
     };
-    this.importFiles('./benchmark');
+    await this.importFiles('./benchmark');
     // TODO
+    await this.provider.run();
   }
 }
