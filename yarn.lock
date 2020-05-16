@@ -2432,10 +2432,10 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-packito@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/packito/-/packito-0.4.0.tgz#708e2e739284c90c6ff51f39e6714b0b92aeeeca"
-  integrity sha512-k/KNflDayGk6F78Rj58XVdBp0SIQQNPQZuw4S7Z+KC11Dm/VhQ2QetwRxlj8W5Di3yojxAXpWDQ1eu5mgaCJ4g==
+packito@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/packito/-/packito-0.5.0.tgz#0c4a108026f1a5171ad37de8a90e650845b27638"
+  integrity sha512-bnQvlWKomQqhYz0cy+ihU2Jud5WZaL7h+047xNrlIDvXprnS1watCaCkB89R5Fs/MNtAuy9SUf0uURkJSJ0QVA==
   dependencies:
     chalk "^3.0.0"
     minimist "^1.2.0"
